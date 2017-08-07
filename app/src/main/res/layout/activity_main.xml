@@ -42,7 +42,7 @@
     <com.ccr.calendarview.view.WeekView
         android:id="@+id/weekView"
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="20dp" />
 
 
 

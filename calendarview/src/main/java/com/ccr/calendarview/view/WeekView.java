@@ -22,8 +22,7 @@ import com.ccr.calendarview.utils.CalendarUtil;
  */
 
 public class WeekView extends View {
-//    private String[] weekArray = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
-    private String[] weekArray = null;
+    private String[] weekArray = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
     private int weekSize = 12;//文字尺寸
     private int weekColor = Color.BLACK;//文字颜色
 
@@ -116,8 +115,8 @@ public class WeekView extends View {
     /**
      * 添加数据
      */
-    public void setDate(String[] date){
-        weekArray=date;
+    public void setDate(String[] list){
+        this.weekArray=list;
     }
 
 }

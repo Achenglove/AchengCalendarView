@@ -5,11 +5,13 @@
     android:id="@+id/activity_multi_choose"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:background="#ffffff">
 
         <ImageView
@@ -37,15 +39,24 @@
 
     </RelativeLayout>
 
-    <com.othershe.calendarview.WeekView
-        android:layout_width="match_parent"
-        android:layout_height="35dp" />
-
-    <com.othershe.calendarview.CalendarView
-        android:id="@+id/calendar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        calendarview:disable_before="true" />
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+        <com.ccr.calendarview.view.WeekView
+            android:id="@+id/weekView"
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.ccr.calendarview.view.CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            calendarview:disable_before="true" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"

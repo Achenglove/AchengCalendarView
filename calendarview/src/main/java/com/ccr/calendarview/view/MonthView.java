@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ccr.calendarview.R;
 import com.ccr.calendarview.bean.DateBean;
@@ -194,9 +195,14 @@ public class MonthView extends ViewGroup {
                                 chooseDays.remove(day);
                                 flag = false;
                             } else {
-                                setDayColor(v, COLOR_SET);
-                                chooseDays.add(day);
                                 flag = true;
+                                if(chooseDays.size()<2) {
+                                    setDayColor(v, COLOR_SET);
+                                    chooseDays.add(day);
+                                }else{
+//                                    Toast.makeText(mContext,"最多只能选择两个",Toast.LENGTH_LONG).show();
+                                    return;
+                                }
                             }
                             calendarView.setLastChooseDate(day, flag);
                             chooseListener.onMonthItemChoose(v, date, flag);
@@ -212,7 +218,8 @@ public class MonthView extends ViewGroup {
                                 clickListener.onMonthItemClick(v, date);
                             }
                         }
-                    } else if (date.getType() == 0) {//点击上月
+                    }
+                    else if (date.getType() == 0) {//点击上月
                         calendarView.setLastClickDay(day);
                         calendarView.lastMonth();
                         if (clickListener != null) {
@@ -225,6 +232,7 @@ public class MonthView extends ViewGroup {
                             clickListener.onMonthItemClick(v, date);
                         }
                     }
+
                 }
             });
             addView(view, i);

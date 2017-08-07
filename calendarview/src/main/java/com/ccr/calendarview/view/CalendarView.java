@@ -3,6 +3,7 @@ package com.ccr.calendarview.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.util.SparseArray;
@@ -52,7 +53,8 @@ public class CalendarView extends ViewPager {
     private int colorChoose = Color.WHITE;//选中的日期文字颜色
     private int sizeSolar = 14;//阳历日期文字尺寸
     private int sizeLunar = 8;//阴历日期文字尺寸
-    private int dayBg = R.drawable.blue_circle;//选中的背景
+//    private int dayBg = R.drawable.blue_circle;//选中的背景
+    private int dayBg = R.drawable.selector;//选中的背景
 
     private int count;//ViewPager的页数
     private int[] lastClickDate = new int[2];//上次点击的日期
